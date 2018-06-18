@@ -1,6 +1,15 @@
 //add event handlers here
     document.getElementById("inputButtonId").addEventListener('click',function(){
-        processSearch(document.getElementById('input1').value);
+        document.getElementById("layover").classList.add("show");
+        processSearchById(document.getElementById('input1').value);
+    });
+
+    document.getElementById("inputButtonType").addEventListener('click',function(){
+        processSearchByType(document.getElementById('input2').value);
+    });
+
+    document.getElementById("inputButtonPrice").addEventListener('click',function(){
+        processSearchByPrice(document.getElementById('input3').value);
     });
 
     api.searchAllProducts().then(function(value){
@@ -8,7 +17,7 @@
     });
 
 //add function definitions here
-    function processSearch(searchId){
+    function processSearchById(searchId){
         api.searchProductById(searchId).then(function(val){
             return Promise.all([api.searchProductsByPrice(val.price,50),api.searchProductsByType(val.type),val]);
         }).then(function(val){
@@ -18,6 +27,25 @@
         }).catch(function(val){
             alert(val);
         });
+    }
+
+    function processSearchByType(type){
+        api.searchProductsByType(type).then(function(val){
+            console.log(val);
+            return val;
+        }).then(function(val){
+            var similarArray = val;
+            updateExaminedText(val[2]);
+            updateTable('similarTable',similarArray);
+        }).catch(function(val){
+            alert(val);
+        });
+    }
+
+    function processSearchByPrice(price) {
+        api.searchProductsByPrice(price, 50).then(function() {
+
+        })
     }
 
     function getIntersection(arrA,arrB,searchedId){
@@ -78,7 +106,7 @@
             var td4 = document.createElement('button');
 
             td4.addEventListener('click',function(){
-                processSearch(this.parentNode.firstChild.innerHTML);
+                processSearchById(this.parentNode.firstChild.innerHTML);
             });
 
             td1.appendChild(document.createTextNode(productArray[i].id));
@@ -93,5 +121,6 @@
 
             tableBody.appendChild(tr);
         }  
+        document.getElementById("layover").classList.remove("show");
 
     }
