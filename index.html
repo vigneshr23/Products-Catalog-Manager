@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Catalog Management</title>
-    <style type="text/css">
+    <head>
+        <title>Catalog Management</title>
+        <style type="text/css">
         input {
             padding: 5px;
             border-radius: 4px;
@@ -30,65 +30,51 @@
         #layover.show {
             display: block;
         }
-
-
-    </style>
-    <script src="library.js"></script>
-</head>
-<body style="width: 441px; margin: 0 auto; border: 10px solid brown; border-radius: 12px; padding: 1.6em; box-shadow: 4px 4px 6px #ccc">
-    <div id="layover"></div>
-    <h1 style="text-align: center;border-bottom: 2px solid;    border-top: 2px solid;padding: 5px 0;"><em>Product Catalog Manager</em></h1>
-    <div>
-        <h3>Search Product by Id</h3>
-        <input id="input1">
-        <button id="inputButtonId" >Search Product</button>
-    </div>
-
-    <div>
-        <h3>Search Product by Type</h3>
-        <input id="input2">
-        <button id="inputButtonType" >Search Type</button>
-    </div>
-
-    <div>
-        <h3>Search Product by Price</h3>
-        <input id="input3">
-        <button id="inputButtonPrice" >Search Price</button>
-    </div>
-
-
-    <div >
-        <h3>Examined Product</h3>
-        <p id="productText">Product Id: <br>Price: <br>Type: </p>
-        <h3>List of Similar Products</h3>
-
-        <table id="similarTable" width="300px" border="1" >
-        <tr>
-            <th>ProductId</th>
-            <th>Type</th> 
-            <th>Price</th>
-            <th>Examine</th>
-        </tr>
-
-        </table>
-
-    </div>
-
-    <div >
-    <h3>List of All Products</h3>
-    <table id="allTable" width="300px" border="1" >
-        <tr>
-            <th>ProductId</th>
-            <th>Type</th> 
-            <th>Price</th>
-            <th>Examine</th>
-        </tr>
-
-    </table>
-    </div>
-
-
-<script src="app.js"></script> 
-</body>
+        </style>
+        <script src="library.js"></script>
+    </head>
+    <body style="width: 441px; margin: 0 auto; border: 10px solid brown; border-radius: 12px; padding: 1.6em; box-shadow: 4px 4px 6px #ccc">
+        <div id="layover"></div>
+        <h1 style="text-align: center;border-bottom: 2px solid;    border-top: 2px solid;padding: 5px 0;"><em>Product Catalog Manager</em></h1>
+        <div>
+            <h3>Search Product by Id</h3>
+            <input id="input1">
+            <button id="inputButtonId" >Search Product</button>
+        </div>
+        <div>
+            <h3>Search Product by Type</h3>
+            <input id="input2">
+            <button id="inputButtonType" >Search Type</button>
+        </div>
+        <div>
+            <h3>Search Product by Price</h3>
+            <input id="input3">
+            <button id="inputButtonPrice" >Search Price</button>
+        </div>
+        <div >
+            <h3>Examined Product</h3>
+            <p id="productText">Product Id: <br>Price: <br>Type: </p>
+            <h3>List of Similar Products</h3>
+            <table id="similarTable" width="300px" border="1" >
+                <tr>
+                    <th>ProductId</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Examine</th>
+                </tr>
+            </table>
+        </div>
+        <div >
+            <h3>List of All Products</h3>
+            <table id="allTable" width="300px" border="1" >
+                <tr>
+                    <th>ProductId</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Examine</th>
+                </tr>
+            </table>
+        </div>
+        <script src="app.js"></script>
+    </body>
 </html>
-
